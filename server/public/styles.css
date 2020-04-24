@@ -5,3 +5,6 @@ img {
   height: 250px;
   object-fit: contain;
 }
+.detail-image {
+  height: 300px;
+}

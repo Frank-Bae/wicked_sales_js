@@ -13,7 +13,7 @@ export default class ProductDetails extends React.Component {
   }
 
   getProductId() {
-    fetch('/api/products/1')
+    fetch('/api/products/2')
       .then(response => {
         return response.json();
       })
@@ -37,14 +37,14 @@ export default class ProductDetails extends React.Component {
               <p>Back to Catalog</p>
             </div>
             <div className="row pl-4">
-              <img src={product.image} alt="" />
-              <div className="card-body">
+              <img className="pt-4 detail-image col-5" src={product.image} alt="" />
+              <div className="card-body col-6">
                 <h2 className="card-title pl-1">{product.name}</h2>
                 <p className="card-price pl-1">${(product.price / 100).toFixed(2)}</p>
                 <p className="card-text pl-1">{product.shortDescription}</p>
               </div>
             </div>
-            <div className="row pl-4">
+            <div className="row pl-4 mt-4">
               <p>{product.longDescription}</p>
             </div>
           </div>
