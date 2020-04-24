@@ -12,14 +12,14 @@ export default class ProductDetails extends React.Component {
     this.getProductId();
   }
 
-  getProductId(productId) {
-    fetch(`/api/todos/${productId}`)
+  getProductId() {
+    fetch('/api/products/1')
       .then(response => {
         return response.json();
       })
       .then(data => {
         this.setState({
-          products: data
+          product: data
         });
       })
       .catch(error => {
@@ -28,12 +28,10 @@ export default class ProductDetails extends React.Component {
   }
 
   render() {
-    if (this.state.product == null) {
+    if (this.state.product != null) {
       return (
         <div className="container">
-          <div className="row">back to catalog</div>
-          <div classnmae="row"></div>
-          <div></div>
+          <div className="row">{this.state.product.name}</div>
         </div>
       );
     } else {
