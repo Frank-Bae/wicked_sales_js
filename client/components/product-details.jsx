@@ -9,12 +9,35 @@ export default class ProductDetails extends React.Component {
   }
 
   componentDidMount() {
+    this.getProductId();
+  }
 
+  getProductId(productId) {
+    fetch(`/api/todos/${productId}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({
+          products: data
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
 
   render() {
-    return (
-      null
-    );
+    if (this.state.product == null) {
+      return (
+        <div className="container">
+          <div className="row">back to catalog</div>
+          <div classnmae="row"></div>
+          <div></div>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 }
