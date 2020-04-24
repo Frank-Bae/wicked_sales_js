@@ -1,9 +1,6 @@
 body {
   background-color: rgb(248, 249, 249);
 }
-.header-row {
-  background-color: rgb(52, 58, 64);
-}
 img {
   height: 250px;
   object-fit: contain;

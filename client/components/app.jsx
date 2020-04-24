@@ -29,27 +29,18 @@ export default class App extends React.Component {
   }
 
   render() {
-
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <div className="header-row">
-            <div className="container">
-              <Header />
-            </div>
-          </div>
+          <Header />
           <ProductList setview={this.setView} />
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <div className="header-row">
-
-            <Header />
-
-          </div>
-          <ProductDetails productId={this.state.view}/>
+          <Header />
+          <ProductDetails />
         </div>
       );
     }
