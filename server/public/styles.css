@@ -3,6 +3,7 @@ body {
 }
 .header-row {
   background-color: rgb(52, 58, 64);
+  padding: 7px
 }
 h3 {
   color: white;
