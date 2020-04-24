@@ -19,6 +19,7 @@ export default class ProductList extends React.Component {
         return response.json();
       })
       .then(data => {
+        console.log(data);
         this.setState({
           products: data
         });
@@ -30,10 +31,14 @@ export default class ProductList extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col"><ProductListItems /></div>
-        <div className="col"><ProductListItems /></div>
-        <div className="col"><ProductListItems /></div>
+      <div className="container">
+        <div className="row">
+          {
+            this.state.products.map(product => {
+              return <ProductListItems key={product.productId} product={product} />;
+            })
+          }
+        </div>
       </div>
     );
   }

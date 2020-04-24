@@ -28,9 +28,7 @@ export default class App extends React.Component {
             <Header />
           </div>
         </div>
-        <div className="container">
-          <ProductList />
-        </div>
+        <ProductList />
       </div>
 
     );
@@ -40,14 +38,3 @@ export default class App extends React.Component {
 // this.state.isLoading
 //   ? <h1>Testing connections...</h1>
 //   : <h1>{this.state.message}</h1>;
-
-// <div>
-//   <div className="header-row">
-//     <div className="container">
-//       <Header />
-//     </div>
-//   </div>
-//   <div className="container">
-//     <ProductListItems />
-//   </div>
-// </div>

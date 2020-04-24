@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(248, 249, 249);
+}
 .header-row {
   background-color: rgb(52, 58, 64);
 }
@@ -5,5 +8,11 @@ h3 {
   color: white;
 }
 .card {
-  width: 19rem;
+  width: 21rem;
+  height: 450px;
+  margin: 10px 0;
+}
+img {
+  height: 225px;
+  object-fit: contain;
 }
