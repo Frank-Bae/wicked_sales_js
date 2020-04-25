@@ -35,7 +35,7 @@ export default class ProductDetails extends React.Component {
         <div className="container">
           <div className="card col-md-12 box">
             <div className="row pl-4" onClick={() => this.props.setView('catalog', {})}>
-              <p>Back to Catalog</p>
+              <p className="hover">Back to Catalog</p>
             </div>
             <div className="row pl-4">
               <img className="pt-4 detail-image col-5" src={product.image} alt="" />

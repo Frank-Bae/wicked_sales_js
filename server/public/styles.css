@@ -8,3 +8,6 @@ img {
 .detail-image {
   height: 300px;
 }
+.hover {
+  cursor: pointer;
+}
