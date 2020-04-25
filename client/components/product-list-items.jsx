@@ -3,8 +3,8 @@ import React from 'react';
 function ProductListItems(props) {
   const product = props.product;
   return (
-    <div className="col-md-4 mt-3 ">
-      <div key={product.id} className="card h-100">
+    <div className="col-md-4 mt-3" onClick={() => props.setView('details', { product: product.productId })}>
+      <div key={product.productId} className="card h-100">
         <img src={product.image} className="card-img-top" alt="" />
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>

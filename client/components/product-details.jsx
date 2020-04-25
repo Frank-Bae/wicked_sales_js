@@ -13,7 +13,8 @@ export default class ProductDetails extends React.Component {
   }
 
   getProductId() {
-    fetch('/api/products/2')
+    const id = this.props.productId.product;
+    fetch(`/api/products/${id}`)
       .then(response => {
         return response.json();
       })
@@ -33,7 +34,7 @@ export default class ProductDetails extends React.Component {
       return (
         <div className="container">
           <div className="card col-md-12 box">
-            <div className="row pl-4">
+            <div className="row pl-4" onClick={() => this.props.setView('catalog', {})}>
               <p>Back to Catalog</p>
             </div>
             <div className="row pl-4">

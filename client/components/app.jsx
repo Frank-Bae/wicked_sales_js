@@ -9,7 +9,7 @@ export default class App extends React.Component {
     this.state = {
       message: null,
       isLoading: true,
-      view: { name: 'details', params: {} }
+      view: { name: 'catalog', params: {} }
     };
     this.setView = this.setView.bind(this);
   }
@@ -33,14 +33,14 @@ export default class App extends React.Component {
       return (
         <div>
           <Header />
-          <ProductList setview={this.setView} />
+          <ProductList setView={this.setView}/>
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div>
           <Header />
-          <ProductDetails />
+          <ProductDetails productId={this.state.view.params} setView={this.setView} />
         </div>
       );
     }
