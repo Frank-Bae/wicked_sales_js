@@ -58,6 +58,36 @@ app.get('/api/products/:productId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('api/cart', (req, res, next) => {
+  return res.json([]);
+});
+
+app.post('api/cart', (req, res, next) => {
+  const productId = req.body.productId;
+  if (!parseInt(productId, 10)) {
+    return res.status(400).json({
+      error: 'productId must be positive integer'
+    });
+  }
+  const sql = `
+  select "price"
+  from "product"
+
+  `;
+  const body = [];
+  db.query(sql, body)
+    .then(result => {
+
+    })
+    .then(result => {
+
+    })
+    .then(result => {
+
+    })
+    .catch(err => next(err));
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
