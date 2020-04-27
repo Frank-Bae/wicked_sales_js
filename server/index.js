@@ -62,9 +62,9 @@ app.get('api/cart', (req, res, next) => {
   return res.json([]);
 });
 
-app.post('api/cart', (req, res, next) => {
-  const productId = req.body.productId;
-  if (!parseInt(productId, 10)) {
+app.post('/api/cart', (req, res, next) => {
+  const product = req.body;
+  if (!parseInt(product.productId, 10) <= 0) {
     return res.status(400).json({
       error: 'productId must be positive integer'
     });
@@ -74,7 +74,7 @@ app.post('api/cart', (req, res, next) => {
   from "product"
 
   `;
-  const body = [];
+  const body = [sql];
   db.query(sql, body)
     .then(result => {
 
