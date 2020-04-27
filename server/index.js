@@ -72,10 +72,10 @@ app.post('/api/cart', (req, res, next) => {
   const sql = `
   select "price"
   from "product"
-
+  where "productId" = $1
   `;
-  const body = [sql];
-  db.query(sql, body)
+  const param = [product.productId];
+  db.query(sql, param)
     .then(result => {
 
     })
