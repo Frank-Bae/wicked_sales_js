@@ -64,7 +64,7 @@ app.get('api/cart', (req, res, next) => {
 
 app.post('/api/cart', (req, res, next) => {
   const product = req.body;
-  if (!parseInt(product.productId, 10) <= 0) {
+  if (parseInt(product.productId, 10) <= 0) {
     return res.status(400).json({
       error: 'productId must be positive integer'
     });
@@ -77,7 +77,23 @@ app.post('/api/cart', (req, res, next) => {
   const param = [product.productId];
   db.query(sql, param)
     .then(result => {
-
+      const product = result.rows[0];
+      if (!product) {
+        throw new ClientError('Doesnt work', 400);
+      }
+      const newSql = `
+      insert into "carts" ("cartId", "createdAt")
+      values (default, default)
+      returning "cartId"
+      `;
+      db.query(newSql)
+        .then(result => {
+          const cart = result.rows[0];
+          return {
+            price: product.price,
+            cartId: cart.cartId
+          };
+        });
     })
     .then(result => {
 
