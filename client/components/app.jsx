@@ -34,6 +34,7 @@ export default class App extends React.Component {
       });
   }
 
+  // may need to change
   addToCart(product) {
     const req = {
       method: 'POST',
