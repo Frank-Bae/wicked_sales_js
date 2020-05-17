@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
+import CartSummary from './cart-summary';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -65,18 +66,30 @@ export default class App extends React.Component {
   }
 
   render() {
+
+    // one header that stays the same
+
+    // the bottom body changes depending on the view name
+
     if (this.state.view.name === 'catalog') {
       return (
         <div>
-          <Header cartItemCount={this.state.cart}/>
+          <Header cartItemCount={this.state.cart} setView={this.setView}/>
           <ProductList setView={this.setView}/>
         </div>
       );
     } else if (this.state.view.name === 'details') {
       return (
         <div>
-          <Header cartItemCount={this.state.cart}/>
+          <Header cartItemCount={this.state.cart} setView={this.setView}/>
           <ProductDetails productId={this.state.view.params} setView={this.setView} addToCart={this.addToCart}/>
+        </div>
+      );
+    } else if (this.state.view.name === 'cart') {
+      return (
+        <div>
+          <Header cartItemCount={this.state.cart} setView={this.setView}/>
+          <h1>THIS SHOULD WORK</h1>
         </div>
       );
     }
