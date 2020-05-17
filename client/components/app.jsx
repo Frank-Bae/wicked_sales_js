@@ -65,33 +65,30 @@ export default class App extends React.Component {
       .finally(() => this.setState({ isLoading: false }));
   }
 
-  render() {
-
-    // one header that stays the same
-
-    // the bottom body changes depending on the view name
-
+  getView() {
     if (this.state.view.name === 'catalog') {
       return (
-        <div>
-          <Header cartItemCount={this.state.cart} setView={this.setView}/>
-          <ProductList setView={this.setView}/>
-        </div>
+        <ProductList setView={this.setView} />
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div>
-          <Header cartItemCount={this.state.cart} setView={this.setView}/>
-          <ProductDetails productId={this.state.view.params} setView={this.setView} addToCart={this.addToCart}/>
-        </div>
+        <ProductDetails productId={this.state.view.params} setView={this.setView} addToCart={this.addToCart} />
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <div>
-          <Header cartItemCount={this.state.cart} setView={this.setView}/>
-          <h1>THIS SHOULD WORK</h1>
-        </div>
+        <h1>THIS SHOULD WORK</h1>
       );
     }
+  }
+
+  render() {
+    const getView = this.getView();
+
+    return (
+      <div>
+        <Header cartItemCount={this.state.cart} setView={this.setView} />
+        <div>{getView}</div>
+      </div>
+    );
   }
 }
