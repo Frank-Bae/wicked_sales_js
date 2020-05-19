@@ -2,14 +2,13 @@ import React from 'react';
 import Header from './header';
 import ProductList from './product-list';
 import ProductDetails from './product-details';
+import CartSummary from './cart-summary';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: null,
-      isLoading: true,
-      view: { name: 'catalog', params: {} },
+      view: { name: 'cart', params: {} },
       cart: []
     };
     this.setView = this.setView.bind(this);
@@ -57,28 +56,32 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
-    fetch('/api/health-check')
-      .then(res => res.json())
-      .then(data => this.setState({ message: data.message || data.error }))
-      .catch(err => this.setState({ message: err.message }))
-      .finally(() => this.setState({ isLoading: false }));
   }
 
-  render() {
+  getView() {
     if (this.state.view.name === 'catalog') {
       return (
-        <div>
-          <Header cartItemCount={this.state.cart}/>
-          <ProductList setView={this.setView}/>
-        </div>
+        <ProductList setView={this.setView} />
       );
     } else if (this.state.view.name === 'details') {
       return (
-        <div>
-          <Header cartItemCount={this.state.cart}/>
-          <ProductDetails productId={this.state.view.params} setView={this.setView} addToCart={this.addToCart}/>
-        </div>
+        <ProductDetails productId={this.state.view.params} setView={this.setView} addToCart={this.addToCart} />
+      );
+    } else if (this.state.view.name === 'cart') {
+      return (
+        <CartSummary cart={this.state.cart} setView={this.setView}/>
       );
     }
+  }
+
+  render() {
+    const getView = this.getView();
+
+    return (
+      <div>
+        <Header cartItemCount={this.state.cart} setView={this.setView} />
+        <div>{getView}</div>
+      </div>
+    );
   }
 }
