@@ -7,9 +7,9 @@ export default class CartSummary extends React.Component {
     return (
       <div className="container">
         <div className="row mt-5" onClick={() => this.props.setView('catalog', {})}>
-          <p className="hover">Back to Catalog</p>
+          <p className="hover ml-4">Back to Catalog</p>
         </div>
-        <div className="row mb-4">
+        <div className="row mb-4 ml-1">
           <h1>My Cart</h1>
         </div>
         <div className="row">
