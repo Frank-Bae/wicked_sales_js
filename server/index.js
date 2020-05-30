@@ -179,6 +179,13 @@ app.post('/api/orders', (req, res, next) => {
   values ($1, $2, $3, $4)
   returning "orderId", "name", "creditCard", "shippingAddress", "createdAt"
   `;
+  const params = [req.session.cartId, req.body.name, req.body.creditCard, req.body.shippingAddress];
+  db.query(sql, params)
+    .then(result => {
+      delete req.session.cartId;
+      res.status(201).json(result.rows[0]);
+    })
+    .catch(err => next(err));
 });
 
 app.use('/api', (req, res, next) => {
