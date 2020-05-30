@@ -161,6 +161,26 @@ app.post('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/orders', (req, res, next) => {
+  if (!req.session.cartId) {
+    return res.status(400).json({ error: 'cartId is missing.' });
+  }
+  if (!req.body.name) {
+    return res.status(400).json({ error: 'name is required.' });
+  }
+  if (!req.body.creditCard) {
+    return res.status(400).json({ error: 'creditCard is required.' });
+  }
+  if (!req.body.shippingAddress) {
+    return res.status(400).json({ error: 'shippingAddress is required.' });
+  }
+  const sql = `
+  insert into "orders" ("cartId", "name", "creditCard", "shippingAddress")
+  values ($1, $2, $3, $4)
+  returning "orderId", "name", "creditCard", "shippingAddress", "createdAt"
+  `;
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
