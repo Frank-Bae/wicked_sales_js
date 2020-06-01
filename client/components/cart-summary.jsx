@@ -4,6 +4,12 @@ import CartSummaryItem from './cart-summary-item';
 export default class CartSummary extends React.Component {
 
   render() {
+    const itemTotals = this.props.cart.length;
+    let result = 0;
+    for (let i = 0; i < itemTotals; i++) {
+      const price = this.props.cart[i].price;
+      result += price;
+    }
     return (
       <div className="container">
         <div className="row mt-5" onClick={() => this.props.setView('catalog', {})}>
@@ -19,6 +25,7 @@ export default class CartSummary extends React.Component {
             })
           }
         </div>
+        <h2>Item Totals: ${(result / 100).toFixed(2)}</h2>
       </div>
     );
   }
