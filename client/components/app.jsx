@@ -54,6 +54,23 @@ export default class App extends React.Component {
       });
   }
 
+  placeOrder(name, creditCard, shippingAddress) {
+    const req = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(name, creditCard, shippingAddress)
+    };
+    fetch('/api/oders', req)
+      .then(results => results.json())
+      .then(data => this.setState({
+        cart: [],
+        view: {
+          name: 'catalog',
+          params: {}
+        }
+      }));
+  }
+
   componentDidMount() {
     this.getCartItems();
   }
@@ -70,6 +87,10 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'cart') {
       return (
         <CartSummary cart={this.state.cart} setView={this.setView}/>
+      );
+    } else if (this.state.view.name === 'CheckoutForm') {
+      return (
+        console.log('checkout form')
       );
     }
   }
