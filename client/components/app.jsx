@@ -54,11 +54,11 @@ export default class App extends React.Component {
       });
   }
 
-  placeOrder(name, creditCard, shippingAddress) {
+  placeOrder(information) {
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(name, creditCard, shippingAddress)
+      body: JSON.stringify(information)
     };
     fetch('/api/oders', req)
       .then(results => results.json())
