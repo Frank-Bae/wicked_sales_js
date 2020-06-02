@@ -14,6 +14,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.placeorder = this.placeOrder.bind(this);
   }
 
   setView(name, params) {
@@ -69,7 +70,8 @@ export default class App extends React.Component {
           name: 'catalog',
           params: {}
         }
-      }));
+      }))
+      .catch(err => console.error(err));
   }
 
   componentDidMount() {
@@ -91,7 +93,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'CheckoutForm') {
       return (
-        <CheckoutForm />
+        <CheckoutForm cart={this.state.cart} placeOrder={this.placeOrder} setView={this.setView}/>
       );
     }
   }
