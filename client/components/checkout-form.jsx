@@ -11,8 +11,16 @@ export default class CheckoutForm extends React.Component {
 
   render() {
     return (
-      <h1>something</h1>
+      <div className="container">
+        <h1 className="mt-5">My Cart</h1>
+        <p>Order Total: null</p>
+        <form action="">
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input type="text" className="form-control" id="name" placeHolder="John Doe"/>
+          </div>
+        </form>
+      </div>
     );
-
   }
 }
