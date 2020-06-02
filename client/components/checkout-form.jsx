@@ -8,10 +8,10 @@ export default class CheckoutForm extends React.Component {
       creditCard: null,
       shippingAddress: null
     };
-
+    this.handleChangeName = this.handleChangeName.bind(this);
   }
 
-  handleChangeName() {
+  handleChangeName(event) {
     this.setState({
       name: event.target.value
     });
@@ -41,7 +41,7 @@ export default class CheckoutForm extends React.Component {
         <form action="">
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" id="name" placeholder="John Doe"/>
+            <input onChange={this.handleChangeName} type="text" className="form-control" id="name" placeholder="John Doe"/>
           </div>
           <div className="form-group">
             <label htmlFor="creditCard">Credit Card</label>
