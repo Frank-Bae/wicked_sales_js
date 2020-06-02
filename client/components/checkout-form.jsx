@@ -19,6 +19,10 @@ export default class CheckoutForm extends React.Component {
             <label htmlFor="name">Name</label>
             <input type="text" className="form-control" id="name" placeHolder="John Doe"/>
           </div>
+          <div className="form-group">
+            <label htmlFor="creditCard">Credit Card</label>
+            <input type="number" className="form-control" id="creditcard" placeHolder="0000 0000 0000 0000 0000"/>
+          </div>
         </form>
       </div>
     );
