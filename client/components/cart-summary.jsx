@@ -3,6 +3,14 @@ import CartSummaryItem from './cart-summary-item';
 
 export default class CartSummary extends React.Component {
 
+  checkingOutButton() {
+    if (this.props.cart.length) {
+      return (
+        <button onClick={() => this.props.setView('CheckoutForm', {})} type="button" className="mr-3 btn btn-primary">Checkout</button>
+      );
+    }
+  }
+
   render() {
     const itemTotals = this.props.cart.length;
     let result = 0;
@@ -28,7 +36,7 @@ export default class CartSummary extends React.Component {
         </div>
         <div className="d-flex justify-content-between row mb-5">
           <h2 className="pl-3">Item Totals: ${(result / 100).toFixed(2)}</h2>
-          <button onClick={() => this.props.setView('CheckoutForm', {})} type="button" className="mr-3 btn btn-primary">Checkout</button>
+          { this.checkingOutButton() }
         </div>
       </div>
     );
