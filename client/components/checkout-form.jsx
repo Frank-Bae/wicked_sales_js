@@ -5,8 +5,32 @@ export default class CheckoutForm extends React.Component {
     super(props);
     this.state = {
       name: null,
-      creditCard: null
+      creditCard: null,
+      shippingAddress: null
     };
+
+  }
+
+  handleChangeName() {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
+  handleChangeCreditCard() {
+    this.setState({
+      creditCard: event.target.value
+    });
+  }
+
+  handleChangeShippingAddress() {
+    this.setState({
+      shippingAddress: event.target.value
+    });
+  }
+
+  handleSubmit() {
+
   }
 
   render() {
