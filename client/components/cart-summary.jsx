@@ -10,6 +10,7 @@ export default class CartSummary extends React.Component {
       const price = this.props.cart[i].price;
       result += price;
     }
+
     return (
       <div className="container">
         <div className="row mt-5" onClick={() => this.props.setView('catalog', {})}>
@@ -27,7 +28,7 @@ export default class CartSummary extends React.Component {
         </div>
         <div className="d-flex justify-content-between row mb-5">
           <h2 className="pl-3">Item Totals: ${(result / 100).toFixed(2)}</h2>
-          <button type="button" className="mr-3 btn btn-primary">Checkout</button>
+          <button onClick={() => this.props.setView('CheckoutForm', {})} type="button" className="mr-3 btn btn-primary">Checkout</button>
         </div>
       </div>
     );

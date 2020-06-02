@@ -28,6 +28,10 @@ export default class CheckoutForm extends React.Component {
             <textarea className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
           </div>
         </form>
+        <div className="d-flex justify-content-between row mt-5">
+          <p className="ml-3">Continue Shopping</p>
+          <button type="button" className="mr-3 btn btn-primary">Checkout</button>
+        </div>
       </div>
     );
   }
