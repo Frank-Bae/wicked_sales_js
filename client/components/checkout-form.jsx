@@ -64,7 +64,7 @@ export default class CheckoutForm extends React.Component {
             <textarea onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
           </div>
           <div className="d-flex justify-content-between row mt-5">
-            <p className="ml-3">Continue Shopping</p>
+            <p className="ml-3 hover" onClick={() => this.props.setView('catalog', {})}>Continue Shopping</p>
             <button type="submit" className="mr-3 btn btn-primary">Checkout</button>
           </div>
         </form>
