@@ -9,6 +9,8 @@ export default class CheckoutForm extends React.Component {
       shippingAddress: null
     };
     this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeCreditCard = this.handleChangeCreditCard.bind(this);
+    this.handleChangeShippingAddress = this.handleChangeShippingAddress.bind(this);
   }
 
   handleChangeName(event) {
@@ -45,11 +47,11 @@ export default class CheckoutForm extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="creditCard">Credit Card</label>
-            <input type="number" className="form-control" id="creditcard" placeholder="0000-0000-0000-0000"/>
+            <input onChange={this.handleChangeCreditCard} type="number" className="form-control" id="creditcard" placeholder="0000-0000-0000-0000"/>
           </div>
           <div className="form-group">
             <label htmlFor="shippingAddress">Shipping Address</label>
-            <textarea className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
+            <textarea onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
           </div>
         </form>
         <div className="d-flex justify-content-between row mt-5">
