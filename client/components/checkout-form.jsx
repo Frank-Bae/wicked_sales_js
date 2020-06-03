@@ -35,15 +35,21 @@ export default class CheckoutForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const information = { ...this.state };
-    console.log(information);
     this.props.placeOrder(information);
   }
 
   render() {
+    const itemTotals = this.props.cart.length;
+    let result = 0;
+    for (let i = 0; i < itemTotals; i++) {
+      const price = this.props.cart[i].price;
+      result += price;
+    }
+
     return (
       <div className="container">
         <h1 className="mt-5">My Cart</h1>
-        <p>Order Total: null</p>
+        <p>Order Total: ${(result / 100).toFixed(2)}</p>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
