@@ -4,13 +4,14 @@ export default class CheckoutForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      creditCard: null,
-      shippingAddress: null
+      name: '',
+      creditCard: '',
+      shippingAddress: ''
     };
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeCreditCard = this.handleChangeCreditCard.bind(this);
     this.handleChangeShippingAddress = this.handleChangeShippingAddress.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChangeName(event) {
@@ -19,20 +20,23 @@ export default class CheckoutForm extends React.Component {
     });
   }
 
-  handleChangeCreditCard() {
+  handleChangeCreditCard(event) {
     this.setState({
       creditCard: event.target.value
     });
   }
 
-  handleChangeShippingAddress() {
+  handleChangeShippingAddress(event) {
     this.setState({
       shippingAddress: event.target.value
     });
   }
 
-  handleSubmit() {
-
+  handleSubmit(event) {
+    event.preventDefault();
+    const information = { ...this.state };
+    console.log(information);
+    this.props.placeOrder(information);
   }
 
   render() {
@@ -40,7 +44,7 @@ export default class CheckoutForm extends React.Component {
       <div className="container">
         <h1 className="mt-5">My Cart</h1>
         <p>Order Total: null</p>
-        <form action="">
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input onChange={this.handleChangeName} type="text" className="form-control" id="name" placeholder="John Doe"/>
@@ -53,11 +57,11 @@ export default class CheckoutForm extends React.Component {
             <label htmlFor="shippingAddress">Shipping Address</label>
             <textarea onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
           </div>
+          <div className="d-flex justify-content-between row mt-5">
+            <p className="ml-3">Continue Shopping</p>
+            <button type="submit" className="mr-3 btn btn-primary">Checkout</button>
+          </div>
         </form>
-        <div className="d-flex justify-content-between row mt-5">
-          <p className="ml-3">Continue Shopping</p>
-          <button type="button" className="mr-3 btn btn-primary">Checkout</button>
-        </div>
       </div>
     );
   }

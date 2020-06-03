@@ -14,7 +14,7 @@ export default class App extends React.Component {
     };
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
-    this.placeorder = this.placeOrder.bind(this);
+    this.placeOrder = this.placeOrder.bind(this);
   }
 
   setView(name, params) {
@@ -62,7 +62,7 @@ export default class App extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(information)
     };
-    fetch('/api/oders', req)
+    fetch('/api/orders', req)
       .then(results => results.json())
       .then(data => this.setState({
         cart: [],
