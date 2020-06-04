@@ -24,7 +24,7 @@ https://wicked-sales.frankbae.com/
 - Users can checkout their item to a payment form.
 
 ## Preview
-
+![](./previews/ScreenShot.png)
 ## Development
 
 ### System Requirements
@@ -32,12 +32,12 @@ https://wicked-sales.frankbae.com/
 - npm 6 or higher
 - postgreSQL
 
-### Getting Started 
+### Getting Started
 1. Clone the repository
 - git clone https://github.com/Frank-Bae/wicked_sales_js.git
 - cd wicked_sales_js
 2. Install all dependencies with NPM
-- npm install 
+- npm install
 3. Import the example database to postgreSQL
 - npm run db:import
 4. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
