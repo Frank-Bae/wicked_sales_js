@@ -34,8 +34,11 @@ export default class CheckoutForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const information = { ...this.state };
-    this.props.placeOrder(information);
+    const { name, creditCard, shippingAddress } = this.state;
+    if (name !== '' && creditCard !== '' && shippingAddress !== '') {
+      const information = { ...this.state };
+      this.props.placeOrder(information);
+    }
   }
 
   render() {
