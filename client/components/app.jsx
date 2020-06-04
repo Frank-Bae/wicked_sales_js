@@ -9,7 +9,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'details', params: {} },
+      view: { name: 'cart', params: {} },
       cart: []
     };
     this.setView = this.setView.bind(this);
