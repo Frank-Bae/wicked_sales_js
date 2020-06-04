@@ -34,9 +34,9 @@ export default class CartSummary extends React.Component {
             })
           }
         </div>
-        <div className="d-flex justify-content-between row mb-5">
-          <h2 className="pl-3">Item Totals: ${(result / 100).toFixed(2)}</h2>
-          { this.checkingOutButton() }
+        <div className="d-flex flex-nowrap justify-content-between">
+          <h3 className="mb-5">Item Totals: ${(result / 100).toFixed(2)}</h3>
+          <div>{this.checkingOutButton()} </div>
         </div>
       </div>
     );

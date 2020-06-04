@@ -32,21 +32,21 @@ export default class ProductDetails extends React.Component {
     const product = this.state.product;
     if (this.state.product != null) {
       return (
-        <div className="container">
-          <div className="card col-md-12 box">
-            <div className="row pl-4" onClick={() => this.props.setView('catalog', {})}>
+        <div className="container mt-3 mb-5">
+          <div className="card d-flex flex-nowrap">
+            <div className="col-sm-5 pt-3 pl-3 " onClick={() => this.props.setView('catalog', {})}>
               <p className="hover">Back to Catalog</p>
             </div>
-            <div className="row pl-4">
-              <img className="pt-4 detail-image col-5" src={product.image} alt="" />
-              <div className="card-body col-6">
-                <h2 className="card-title pl-1">{product.name}</h2>
-                <p className="card-price pl-1">${(product.price / 100).toFixed(2)}</p>
-                <p className="card-text pl-1">{product.shortDescription}</p>
+            <div className="row no-gutters p-2 pt-3 d-flex justify-content-around">
+              <img className="col-sm-5 mr-2" src={product.image} alt="" />
+              <div className="col-sm-6">
+                <h2>{product.name}</h2>
+                <p>${(product.price / 100).toFixed(2)}</p>
+                <p>{product.shortDescription}</p>
                 <button onClick={() => this.props.addToCart(this.state.product)} type="button" className="btn btn-primary">Add to Cart</button>
               </div>
             </div>
-            <div className="row pl-4 mt-4">
+            <div className="pr-5 pl-5 pb-3 pt-3">
               <p>{product.longDescription}</p>
             </div>
           </div>
