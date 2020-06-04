@@ -241,6 +241,31 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 190	49	6	830
 191	50	1	2999
 192	50	2	2595
+193	51	1	2999
+194	51	2	2595
+195	52	1	2999
+196	53	1	2999
+197	54	1	2999
+198	54	2	2595
+199	55	2	2595
+200	56	2	2595
+201	57	2	2595
+202	58	1	2999
+203	59	1	2999
+204	59	3	2900
+205	60	3	2900
+206	61	1	2999
+207	62	1	2999
+208	63	1	2999
+209	64	1	2999
+210	65	1	2999
+211	66	1	2999
+212	66	2	2595
+213	67	1	2999
+214	67	2	2595
+215	68	1	2999
+216	68	2	2595
+217	69	3	2900
 \.
 
 
@@ -253,6 +278,25 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 48	2020-05-30 21:27:52.520839+00
 49	2020-05-30 21:28:15.659647+00
 50	2020-05-30 21:34:03.2332+00
+51	2020-05-30 22:17:13.092341+00
+52	2020-05-30 22:39:11.120313+00
+53	2020-05-30 22:41:12.426664+00
+54	2020-05-30 22:42:58.532976+00
+55	2020-05-30 22:46:39.378511+00
+56	2020-05-30 23:21:42.882729+00
+57	2020-05-31 00:04:26.71077+00
+58	2020-06-01 18:44:27.939797+00
+59	2020-06-01 19:46:21.707521+00
+60	2020-06-02 20:32:37.112168+00
+61	2020-06-02 21:19:36.355081+00
+62	2020-06-02 21:43:33.279007+00
+63	2020-06-03 20:00:22.204951+00
+64	2020-06-03 21:01:49.843676+00
+65	2020-06-03 21:53:08.639131+00
+66	2020-06-03 22:16:59.951768+00
+67	2020-06-03 22:30:44.496242+00
+68	2020-06-04 22:12:53.473069+00
+69	2020-06-04 22:35:08.062352+00
 \.
 
 
@@ -262,6 +306,14 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
 1	47	bob	21221	21221	2020-05-20 01:26:48.460985+00
+2	56	frank	282828	heello	2020-05-30 23:22:46.699405+00
+3	57	frank	282828	heello	2020-05-31 00:04:41.720427+00
+4	64	sdsd	2323	sds	2020-06-03 21:17:48.381003+00
+5	65	ssdsdsd	212212112	oi1e0921u03 2j103j 2103	2020-06-03 21:53:50.207295+00
+6	66	dsdsd	222	2222	2020-06-03 22:30:38.616598+00
+7	67	sdsadsad	2132132132132	cewd2ed12e123	2020-06-03 22:31:15.713994+00
+8	68	John	1029102910920129	OAisoij2091 he0921j e09j 	2020-06-04 22:27:33.950834+00
+9	69	dsadas	232323	adwdawd	2020-06-04 22:35:15.416735+00
 \.
 
 
@@ -283,21 +335,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 192, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 217, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 50, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 69, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, true);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 9, true);
 
 
 --
