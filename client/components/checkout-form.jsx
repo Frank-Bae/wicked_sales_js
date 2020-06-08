@@ -50,7 +50,7 @@ export default class CheckoutForm extends React.Component {
     }
 
     return (
-      <div className="container">
+      <div className="container mb-5">
         <h1 className="mt-5">My Cart</h1>
         <p>Order Total: ${(result / 100).toFixed(2)}</p>
         <form onSubmit={this.handleSubmit}>
