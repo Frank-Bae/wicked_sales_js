@@ -9,7 +9,7 @@ function Header(props) {
         <h3 className="text-white py-2 pr-0">
           <i className="fas fa-dollar-sign"></i>Wicked Sales
         </h3>
-        <p>{`${cartItemCount} items`}<i onClick={() => setView('cart', {})} className="fas fa-shopping-cart fa-2x cart py-2 hover"></i></p>
+        <p className="hover" onClick={() => setView('cart', {})}>{`${cartItemCount} items`}<i onClick={() => setView('cart', {})} className="fas fa-shopping-cart fa-2x cart py-2 hover"></i></p>
       </div>
     </div>
   );
