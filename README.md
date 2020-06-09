@@ -34,19 +34,30 @@ https://wicked-sales.frankbae.com/
 
 ### Getting Started
 1. Clone the repository
-- git clone https://github.com/Frank-Bae/wicked_sales_js.git
-- cd wicked_sales_js
+
+        git clone https://github.com/Frank-Bae/wicked_sales_js.git
+        cd wicked_sales_js
+
 2. Install all dependencies with NPM
-- npm install
+
+        npm install
+
 3. Start PostgreSQL server
-- sudo service postgresql start
+
+        sudo service postgresql start
+
 4. Create database
-- createdb wickedSales
+
+        createdb wickedSales
+
 5. Import the example database to postgreSQL
-- npm run db:import
+
+        npm run db:import
+
 6. Copy ENV file
 
-    make a env file and copy the file from the env.example
+        make a env file and copy the file from the env.example
     
 7. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
-- npm run dev
+        
+        npm run dev
