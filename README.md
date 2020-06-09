@@ -45,6 +45,8 @@ https://wicked-sales.frankbae.com/
 5. Import the example database to postgreSQL
 - npm run db:import
 6. Copy ENV file
-- make a env file and copy the file from the env.example
+
+    make a env file and copy the file from the env.example
+    
 7. Start the project. Once started you can view the application by opening http://localhost:3000 in your browser.
 - npm run dev
