@@ -16,12 +16,10 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    if (this.state.show) {
-      document.getElementById('modal').style.display = 'none';
-    }
+    const disable = (this.state.show) ? 'none' : 'modals';
 
     return (
-      <div id="modal">
+      <div className={disable}>
         <div className="modalContent">
           <h1>Welcome to Wicked Sales</h1>
 
