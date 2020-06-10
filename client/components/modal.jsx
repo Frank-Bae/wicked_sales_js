@@ -5,7 +5,7 @@ export default class Modal extends React.Component {
   render() {
     return (
       <div id="modal">
-        <div className="modalconent">
+        <div className="modalContent">
           <h1></h1>
 
           <p>fasfsdfasfsfsdfsdfsdsffsd</p>
