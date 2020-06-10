@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal';
 import ProductListItems from './product-list-items';
 
 export default class ProductList extends React.Component {
@@ -31,6 +32,7 @@ export default class ProductList extends React.Component {
   render() {
     return (
       <div className="container">
+        <Modal />
         <div className="row">
           {
             this.state.products.map(product => {
