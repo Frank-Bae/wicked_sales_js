@@ -26,8 +26,13 @@ export default class Modal extends React.Component {
           <h1>Welcome to Wicked Sales</h1>
 
           <p>This is a live demo site for the sole purpose of demonstartion. The products
-            displayed here are not avaibale for purchases. </p>
-          <button onClick={() => this.handleButton()} id="button">Close</button>
+            displayed here are not avaibale for purchases. Please do not put your real
+            creditcard and shipping address in the checkout form. Thank you.</p>
+          <div className="row">
+            <div className="col text-center">
+              <button className="btn btn-primary px-5" onClick={() => this.handleButton()} id="button">Close</button>
+            </div>
+          </div>
         </div>
       </div>
     );
