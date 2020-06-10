@@ -4,16 +4,22 @@ export default class Modal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: true
+      show: false
     };
     this.handleButton = this.handleButton.bind(this);
   }
 
   handleButton() {
-    console.log('clicked');
+    this.setState({
+      show: true
+    });
   }
 
   render() {
+    if (this.state.show) {
+      document.getElementById('modal').style.display = 'none';
+    }
+
     return (
       <div id="modal">
         <div className="modalContent">
