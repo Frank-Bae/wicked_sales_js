@@ -54,3 +54,7 @@ img {
 .none {
   display: none;
 }
+
+.line{
+  border-top: 2px solid red;
+}
