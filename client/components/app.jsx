@@ -100,13 +100,22 @@ export default class App extends React.Component {
     }
   }
 
+  banner() {
+    if (this.state.view.name === 'catalog') {
+      return (
+        <Banner />
+      );
+    }
+  }
+
   render() {
     const getView = this.getView();
+    const banner = this.banner();
 
     return (
       <div>
         <Header cartItemCount={this.state.cart} setView={this.setView} />
-        <Banner />
+        <div>{banner}</div>
         <div>{getView}</div>
         {/* <Modal /> */}
       </div>
