@@ -4,7 +4,8 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
-import Modal from './modal';
+import Banner from './banner';
+// import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -105,8 +106,9 @@ export default class App extends React.Component {
     return (
       <div>
         <Header cartItemCount={this.state.cart} setView={this.setView} />
+        <Banner />
         <div>{getView}</div>
-        <Modal />
+        {/* <Modal /> */}
       </div>
     );
   }
