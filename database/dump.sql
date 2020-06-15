@@ -266,6 +266,13 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 215	68	1	2999
 216	68	2	2595
 217	69	3	2900
+218	70	1	2999
+219	71	1	2999
+220	72	1	2999
+221	73	1	2999
+222	74	1	2999
+223	75	1	2999
+224	76	1	2999
 \.
 
 
@@ -297,6 +304,13 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 67	2020-06-03 22:30:44.496242+00
 68	2020-06-04 22:12:53.473069+00
 69	2020-06-04 22:35:08.062352+00
+70	2020-06-04 22:41:19.598835+00
+71	2020-06-04 22:52:48.243982+00
+72	2020-06-04 22:57:21.135139+00
+73	2020-06-04 23:09:01.919703+00
+74	2020-06-04 23:14:31.934546+00
+75	2020-06-04 23:21:19.79598+00
+76	2020-06-08 17:28:35.789276+00
 \.
 
 
@@ -314,6 +328,13 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 7	67	sdsadsad	2132132132132	cewd2ed12e123	2020-06-03 22:31:15.713994+00
 8	68	John	1029102910920129	OAisoij2091 he0921j e09j 	2020-06-04 22:27:33.950834+00
 9	69	dsadas	232323	adwdawd	2020-06-04 22:35:15.416735+00
+10	70	dsadsa	32343243	2dadawdwadwad	2020-06-04 22:41:26.802036+00
+11	71	dsadsad	132312321	dwqd2112	2020-06-04 22:53:21.350284+00
+12	72	dsadasdasd	123213123	dsad2	2020-06-04 23:04:01.750323+00
+13	73	dsadasd	123213213213	sadasdsadsad	2020-06-04 23:09:09.512401+00
+14	74	sdsad	32121	sadasdas	2020-06-04 23:15:45.092657+00
+15	75	sdadasd	211212	asd21ed	2020-06-04 23:21:26.741367+00
+16	76	dsdsd	23232323	sad2321ed12e21e21e21e12e	2020-06-08 18:28:28.847567+00
 \.
 
 
@@ -322,12 +343,12 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock\\n.Aesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+1	Pro Stand	99900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWUG2_AV2?wid=1000&hei=1000&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1572391499434	Every aspect of Pro Stand was designed with pros in mind. Height, tilt, rotation — it’s completely adjustable, allowing your Pro Display XDR to fit seamlessly into any work environment.	With precision tilting and 120 mm of total height adjustment, Pro Stand helps Pro Display XDR adapt to any viewing condition. When you adjust the height, the angle of the display stays true. Thanks to a highly sophisticated mechanism in the arm, the display feels weightless, moves effortlessly, and stays exactly where you want it.
+4	Apple Mac Pro Feet Kit	29900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MXNM2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1585846655927	Use the Mac Pro Feet Kit to install stainless steel feet to the bottom of your Mac Pro. 	The standard Mac Pro comes with four feet already installed, but if you purchased a Mac Pro with wheels, you can replace each of them with feet for improved stability. Installation required. A 1/4-inch to 4 mm hex bit is included, but additional tools are necessary. Replacing the Mac Pro wheels with feet reduces approximately one inch to the height of the frame.
+5	VESA mount Adapter	19900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWUF2?wid=1144&hei=1144&fmt=jpeg&qlt=80&op_usm=0.5%2C0.5&.v=1572475284878	For pros who use a VESA stand, mount, or arm instead of a traditional stand, the VESA Mount Adapter is the perfect way to seamlessly add Pro Display XDR to your workspace.	It works with any VESA-compatible 100 by 100 mm wall mount, desk mount, stand, or articulating arm that can support the 16.49-pound (7.48 kg) Pro Display XDR.¹ And it can be placed and secured quickly and easily using the included Apple-designed lock key.
+3	Apple Mac Pro Wheels Kit	69900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MX572?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5%2C0.5&.v=1585846657704	Put your Mac Pro on wheels with the Mac Pro Wheels Kit.	The custom-designed stainless steel and rubber wheels make it easy to move your Mac Pro around, whether sliding it out from under your desk or across your studio. Installation required. A 1/4-inch to 4 mm hex bit is included, but additional tools are necessary. Replacing the Mac Pro feet with wheels adds approximately one inch to the height of the frame.
+2	Apple Pen	12900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MK0C2?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1564075356758	Apple Pencil expands the power of iPad mini, iPad Air and iPad, and opens up new creative possibilities. 	It’s sensitive to pressure and tilt so you can easily vary line weight, create subtle shading and produce a wide range of artistic effects — just like a conventional pencil, but with pixel-perfect precision.
+6	Apple Watch Hermès - 44mm Fauve Barénia Leather Single Tour Deployment Buckle	54900	https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MTQF2?wid=572&hei=572&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1566949149373	A sleek twist on an Hermès classic. 	The iconic, extra-long Double Tour wraps elegantly twice around the wrist. Handmade by artisans in France from buttery-smooth Barenia leather, textured Epsom leather, or supple Swift leather.
 \.
 
 
@@ -335,21 +356,21 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 217, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 224, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 69, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 76, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 9, true);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 16, true);
 
 
 --
