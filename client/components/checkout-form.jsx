@@ -51,20 +51,23 @@ export default class CheckoutForm extends React.Component {
 
     return (
       <div className="container mb-5">
+        <div className="alert alert-warning" role="alert">
+          <h2>Do not input your personal information</h2>
+        </div>
         <h1 className="mt-5">My Cart</h1>
         <p>Order Total: ${(result / 100).toFixed(2)}</p>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input onChange={this.handleChangeName} type="text" className="form-control" id="name" placeholder="John Doe"/>
+            <input required onChange={this.handleChangeName} type="text" className="form-control" id="name" placeholder="John Doe"/>
           </div>
           <div className="form-group">
             <label htmlFor="creditCard">Credit Card</label>
-            <input onChange={this.handleChangeCreditCard} type="number" className="form-control" id="creditcard" placeholder="0000-0000-0000-0000"/>
+            <input required onChange={this.handleChangeCreditCard} type="number" className="form-control" id="creditcard" placeholder="0000-0000-0000-0000"/>
           </div>
           <div className="form-group">
             <label htmlFor="shippingAddress">Shipping Address</label>
-            <textarea onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
+            <textarea required onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
           </div>
           <div className="d-flex justify-content-between row mt-5">
             <p className="ml-3 hover" onClick={() => this.props.setView('catalog', {})}>Continue Shopping</p>
