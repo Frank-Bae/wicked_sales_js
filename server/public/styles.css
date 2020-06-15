@@ -1,5 +1,7 @@
 body {
   background-color: rgb(248, 249, 249);
+  max-width: 1300px;
+  margin: auto;
 }
 img {
   height: 250px;
