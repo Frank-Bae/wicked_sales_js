@@ -31,7 +31,7 @@ export default class ProductList extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row mb-5">
           {
             this.state.products.map(product => {
               return <ProductListItems setView={this.props.setView} key={product.productId} product={product} />;
