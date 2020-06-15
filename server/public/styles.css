@@ -5,6 +5,11 @@ img {
   height: 250px;
   object-fit: contain;
 }
+.quote {
+  height: 275px;
+  object-fit: cover;
+  width: 100%;
+}
 .detail-image {
   height: 300px;
 }
