@@ -5,13 +5,13 @@ import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
 import Banner from './banner';
-// import Modal from './modal';
+import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'CheckoutForm', params: {} },
+      view: { name: 'catalog', params: {} },
       cart: []
     };
     this.setView = this.setView.bind(this);
@@ -117,7 +117,7 @@ export default class App extends React.Component {
         <Header cartItemCount={this.state.cart} setView={this.setView} />
         <div>{banner}</div>
         <div>{getView}</div>
-        {/* <Modal /> */}
+        <Modal />
       </div>
     );
   }
