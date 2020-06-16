@@ -62,6 +62,10 @@ export default class CheckoutForm extends React.Component {
             <input required onChange={this.handleChangeName} type="text" className="form-control" id="name" placeholder="John Doe"/>
           </div>
           <div className="form-group">
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email"/>
+          </div>
+          <div className="form-group">
             <label htmlFor="creditCard">Credit Card</label>
             <input required onChange={this.handleChangeCreditCard} type="number" className="form-control" id="creditcard" placeholder="0000-0000-0000-0000"/>
           </div>
