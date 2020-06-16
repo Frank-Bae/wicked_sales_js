@@ -11,6 +11,7 @@ img {
   height: 275px;
   object-fit: cover;
   width: 100%;
+  max-width: 1300px;
 }
 .detail-image {
   height: 300px;
