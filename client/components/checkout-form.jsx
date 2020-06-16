@@ -63,7 +63,7 @@ export default class CheckoutForm extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email"/>
+            <input required type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email"/>
           </div>
           <div className="form-group">
             <label htmlFor="creditCard">Credit Card</label>
@@ -71,12 +71,26 @@ export default class CheckoutForm extends React.Component {
           </div>
           <div className="form-group">
             <label htmlFor="shippingAddress">Shipping Address</label>
-            <textarea required onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="2" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
+            <textarea required onChange={this.handleChangeShippingAddress} className="form-control" id="shippingAddress" rows="1" placeholder="9382 Brooklyn Blvd, New York, NY, 01923"></textarea>
+          </div>
+          <div className="row">
+            <div className="form-group col-6">
+              <label htmlFor="inputCity">City</label>
+              <input type="text" className="form-control" id="inputCity" />
+            </div>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputState">State</label>
+              <select id="inputState" className="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
           </div>
           <div className="d-flex justify-content-between row mt-5">
             <p className="ml-3 hover" onClick={() => this.props.setView('catalog', {})}>Continue Shopping</p>
             <button type="submit" className="mr-3 btn btn-primary">Checkout</button>
           </div>
+
         </form>
       </div>
     );
