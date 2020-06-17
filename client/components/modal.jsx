@@ -21,11 +21,9 @@ export default class Modal extends React.Component {
     return (
       <div className={disable}>
         <div className="modalContent">
-          <h1 className="bg-dark text-light text-center">Welcome to $Apples</h1>
+          <h1 className="bg-dark text-light text-center">Welcome to $Apples!</h1>
           <h4 className="red text-center"><strong>Disclaimer</strong></h4>
-          <p>This is a live demo site for the sole purpose of demonstartion. The products
-            displayed here are not avaibale for purchases. Please do not put your real
-            creditcard and shipping address in the checkout form. Thank you.</p>
+          <p className="text-center">The products and/or information contained in this website are for live demonstration purposes only. <span className="red">NONE OF THE PRODUCTS DISPLAYED ON WICKED SALES ARE FOR SALE.</span> No commercial transaction is intended in the creation and execution of the site. Please refrain from inputting any credit/debit card information or addresses in the site’s “checkout form.” </p>
           <p className="text-center line">By accepting you acknowledge the merchandises displayed are not available for purchase </p>
           <div className="row">
             <div className="col text-center">
