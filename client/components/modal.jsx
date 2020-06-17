@@ -21,8 +21,8 @@ export default class Modal extends React.Component {
     return (
       <div className={disable}>
         <div className="modalContent">
-          <h1 className="bg-info text-center">Welcome to Wicked Sales</h1>
-
+          <h1 className="bg-dark text-light text-center">Welcome to $Apples</h1>
+          <h4 className="red text-center"><strong>Disclaimer</strong></h4>
           <p>This is a live demo site for the sole purpose of demonstartion. The products
             displayed here are not avaibale for purchases. Please do not put your real
             creditcard and shipping address in the checkout form. Thank you.</p>

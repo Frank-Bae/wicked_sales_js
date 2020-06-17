@@ -13,6 +13,9 @@ img {
   width: 100%;
   max-width: 1300px;
 }
+.red {
+  color: red;
+}
 .detail-image {
   height: 300px;
 }
