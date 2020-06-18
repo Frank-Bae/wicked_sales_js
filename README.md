@@ -1,4 +1,4 @@
-# wicked-sales
+# $Apples
 A full stack Node.js and react shopping cart app.
 
 ## Live Deployment
