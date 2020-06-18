@@ -3,7 +3,7 @@ A full stack Node.js and react shopping cart app.
 
 ## Live Deployment
 
-https://wicked-sales.frankbae.com/
+https://apples.frankbae.com/
 
 ## Technologies Used
 - HTML5
