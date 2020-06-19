@@ -24,7 +24,7 @@ https://apples.frankbae.com/
 - Users can checkout their item to a payment form.
 
 ## Preview
-![](./previews/ScreenSho.png)
+![](./previews/ScreenShot.png)
 ## Development
 
 ### System Requirements
