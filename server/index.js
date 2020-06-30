@@ -195,6 +195,23 @@ app.delete('/api/cart/:productId', (req, res, next) => {
       error: 'product Id must be a positive number'
     });
   }
+  const sqlDelete = `
+    delete from "cartitems"
+    where "cartItemId" = $1
+    returning *
+  `;
+  const params = [productId];
+  db.query(sqlDelete, params)
+    .then(result => {
+      const product = result.rows[0];
+      if (!product) {
+        res.status(404).json({
+          error: `Cannot find product with "productId" ${productId}`
+        });
+      } else {
+        res.status(204).json(product);
+      }
+    });
 });
 
 app.use('/api', (req, res, next) => {
