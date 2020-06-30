@@ -188,9 +188,9 @@ app.post('/api/orders', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.delete('/api/cart/:productId', (req, res, next) => {
-  const { productId } = req.params;
-  if (!parseInt(productId, 10)) {
+app.delete('/api/cart/:cartItemId', (req, res, next) => {
+  const { cartItemId } = req.params;
+  if (!parseInt(cartItemId, 10)) {
     return res.status(400).json({
       error: 'product Id must be a positive number'
     });
@@ -200,13 +200,13 @@ app.delete('/api/cart/:productId', (req, res, next) => {
     where "cartItemId" = $1
     returning *
   `;
-  const params = [productId];
+  const params = [cartItemId];
   db.query(sqlDelete, params)
     .then(result => {
       const product = result.rows[0];
       if (!product) {
         res.status(404).json({
-          error: `Cannot find product with "productId" ${productId}`
+          error: `Cannot find product with "cartItemId" ${cartItemId}`
         });
       } else {
         res.status(204).json(product);
