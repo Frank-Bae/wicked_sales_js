@@ -196,7 +196,7 @@ app.delete('/api/cart/:productId', (req, res, next) => {
     });
   }
   const sqlDelete = `
-    delete from "cartitems"
+    delete from "cartItems"
     where "cartItemId" = $1
     returning *
   `;
