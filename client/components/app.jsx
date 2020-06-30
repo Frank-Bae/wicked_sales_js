@@ -76,6 +76,26 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  deleteOrder(cartItemId) {
+    fetch(`/api/cart/${cartItemId}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json())
+      .then(() => {
+        const deleteItem = this.state.cart.slice();
+        for (let i = 0; i < deleteItem.length; i++) {
+          if (deleteItem[i].cartItemId === cartItemId) {
+            deleteItem.splice(i, 1);
+            break;
+          }
+        }
+        this.setState({ cart: deleteItem });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+
   componentDidMount() {
     this.getCartItems();
   }
