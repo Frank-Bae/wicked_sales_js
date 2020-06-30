@@ -10,6 +10,7 @@ function CartSummaryItem(props) {
           <h2>{cartItem.name}</h2>
           <p>${(cartItem.price / 100).toFixed(2)}</p>
           <p>{cartItem.shortDescription}</p>
+          <button>Delete</button>
         </div>
       </div>
     </div>
