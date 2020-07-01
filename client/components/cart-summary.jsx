@@ -30,7 +30,7 @@ export default class CartSummary extends React.Component {
         <div className="row">
           {
             this.props.cart.map(cartItem => {
-              return <CartSummaryItem setView={this.props.setView} key={cartItem.cartItemId} cart={cartItem}/>;
+              return <CartSummaryItem setView={this.props.setView} key={cartItem.cartItemId} cart={cartItem} deleteOrder={this.props.deleteOrder}/>;
             })
           }
         </div>
