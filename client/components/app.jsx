@@ -17,7 +17,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
-    this.deleteOrder = this.deleteOrder.bind(this);
+    // this.deleteOrder = this.deleteOrder.bind(this);
   }
 
   setView(name, params) {
@@ -77,25 +77,25 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  deleteOrder(cartItemId) {
-    fetch(`/api/cart/${cartItemId}`, {
-      method: 'DELETE'
-    })
-      .then(response => response.json())
-      .then(() => {
-        const deleteItem = this.state.cart.slice();
-        for (let i = 0; i < deleteItem.length; i++) {
-          if (deleteItem[i].cartItemId === cartItemId) {
-            deleteItem.splice(i, 1);
-            break;
-          }
-        }
-        this.setState({ cart: deleteItem });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  }
+  // deleteOrder(cartItemId) {
+  //   fetch(`/api/cart/${cartItemId}`, {
+  //     method: 'DELETE'
+  //   })
+  //     .then(response => response.json())
+  //     .then(() => {
+  //       const deleteItem = this.state.cart.slice();
+  //       for (let i = 0; i < deleteItem.length; i++) {
+  //         if (deleteItem[i].cartItemId === cartItemId) {
+  //           deleteItem.splice(i, 1);
+  //           break;
+  //         }
+  //       }
+  //       this.setState({ cart: deleteItem });
+  //     })
+  //     .catch(error => {
+  //       console.error('Error:', error);
+  //     });
+  // }
 
   componentDidMount() {
     this.getCartItems();
@@ -112,7 +112,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} setView={this.setView} onDelete={this.deleteOrder}/>
+        <CartSummary cart={this.state.cart} setView={this.setView}/>
       );
     } else if (this.state.view.name === 'CheckoutForm') {
       return (
