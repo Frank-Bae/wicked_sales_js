@@ -4,7 +4,6 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
-import Banner from './banner';
 import Modal from './modal';
 
 export default class App extends React.Component {
@@ -17,6 +16,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.deleteOrder = this.deleteOrder.bind(this);
   }
 
   setView(name, params) {
@@ -76,6 +76,25 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  deleteOrder(cartItemId) {
+    const req = {
+      method: 'DELETE'
+    };
+    fetch(`/api/cart/${cartItemId}`, req)
+      .then(response => {
+        if (response.ok) {
+          const cart = this.state.cart.slice();
+          for (let i = 0; i < cart.length; i++) {
+            if (cart[i].cartItemId === cartItemId) {
+              cart.splice(i, 1);
+              this.setState({ cart: cart });
+            }
+          }
+        }
+      })
+      .catch(err => console.error(err));
+  }
+
   componentDidMount() {
     this.getCartItems();
   }
@@ -91,7 +110,7 @@ export default class App extends React.Component {
       );
     } else if (this.state.view.name === 'cart') {
       return (
-        <CartSummary cart={this.state.cart} setView={this.setView}/>
+        <CartSummary cart={this.state.cart} setView={this.setView} deleteOrder={this.deleteOrder}/>
       );
     } else if (this.state.view.name === 'CheckoutForm') {
       return (
@@ -100,22 +119,12 @@ export default class App extends React.Component {
     }
   }
 
-  banner() {
-    if (this.state.view.name === 'catalog') {
-      return (
-        <Banner />
-      );
-    }
-  }
-
   render() {
     const getView = this.getView();
-    const banner = this.banner();
 
     return (
       <div>
         <Header cartItemCount={this.state.cart} setView={this.setView} />
-        <div>{banner}</div>
         <div>{getView}</div>
         <Modal />
       </div>

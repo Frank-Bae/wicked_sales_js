@@ -81,7 +81,7 @@ export default class CheckoutForm extends React.Component {
             <div className="form-group col-md-4">
               <label htmlFor="inputState">State</label>
               <select required id="inputState" className="form-control">
-                <option selected>Choose...</option>
+                <option>Choose...</option>
                 <option>CA</option>
               </select>
             </div>

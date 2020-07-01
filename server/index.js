@@ -188,6 +188,32 @@ app.post('/api/orders', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.delete('/api/cart/:cartItemId', (req, res, next) => {
+  const { cartItemId } = req.params;
+  if (!parseInt(cartItemId, 10)) {
+    return res.status(400).json({
+      error: 'product Id must be a positive number'
+    });
+  }
+  const sqlDelete = `
+    delete from "cartItems"
+    where "cartItemId" = $1
+    returning *
+  `;
+  const params = [cartItemId];
+  db.query(sqlDelete, params)
+    .then(result => {
+      const product = result.rows[0];
+      if (!product) {
+        res.status(404).json({
+          error: `Cannot find product with "cartItemId" ${cartItemId}`
+        });
+      } else {
+        res.status(204).json(product);
+      }
+    });
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
