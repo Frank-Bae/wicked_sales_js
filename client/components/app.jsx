@@ -4,14 +4,14 @@ import ProductList from './product-list';
 import ProductDetails from './product-details';
 import CartSummary from './cart-summary';
 import CheckoutForm from './checkout-form';
-import Banner from './banner';
+// import Banner from './banner';
 import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: { name: 'cart', params: {} },
+      view: { name: 'catalog', params: {} },
       cart: []
     };
     this.setView = this.setView.bind(this);
@@ -142,24 +142,24 @@ export default class App extends React.Component {
     }
   }
 
-  banner() {
-    if (this.state.view.name === 'catalog') {
-      return (
-        <Banner />
-      );
-    }
-  }
+  // banner() {
+  //   if (this.state.view.name === 'catalog') {
+  //     return (
+  //       <Banner />
+  //     );
+  //   }
+  // }
 
   render() {
     const getView = this.getView();
-    const banner = this.banner();
+    // const banner = this.banner();
 
     return (
       <div>
         <Header cartItemCount={this.state.cart} setView={this.setView} />
-        <div>{banner}</div>
+        {/* <div>{banner}</div> */}
         <div>{getView}</div>
-        {/* <Modal /> */}
+        <Modal />
       </div>
     );
   }
