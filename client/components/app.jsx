@@ -17,7 +17,6 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
-    // this.deleteOrder = this.deleteOrder.bind(this);
   }
 
   setView(name, params) {
@@ -77,15 +76,16 @@ export default class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  // deleteOrder(cartItemId) {
-  //   fetch(`/api/cart/${cartItemId}`, {
+  // deleteOrder(cartitemId) {
+  //   const req = {
   //     method: 'DELETE'
-  //   })
+  //   };
+  //   fetch(`/api/cart/${cartitemId}`, req)
   //     .then(response => response.json())
   //     .then(() => {
   //       const deleteItem = this.state.cart.slice();
   //       for (let i = 0; i < deleteItem.length; i++) {
-  //         if (deleteItem[i].cartItemId === cartItemId) {
+  //         if (deleteItem[i].cartItemId === cartitemId) {
   //           deleteItem.splice(i, 1);
   //           break;
   //         }
@@ -93,7 +93,7 @@ export default class App extends React.Component {
   //       this.setState({ cart: deleteItem });
   //     })
   //     .catch(error => {
-  //       console.error('Error:', error);
+  //       console.error('this is the error:', error);
   //     });
   // }
 
